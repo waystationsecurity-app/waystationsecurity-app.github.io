@@ -1,0 +1,34 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thanks for going Pro — WayStation</title><meta name="description" content="Get help with WayStation."><meta name="theme-color" content="#0b0f14">
+<meta property="og:title" content="WayStation support"><meta property="og:description" content="Get help with WayStation."><meta property="og:image" content="/assets/icon-512.png">
+<link rel="icon" href="/assets/favicon.png"><link rel="stylesheet" href="/assets/site.css"></head><body>
+<header class="nav"><div class="wrap">
+<a class="brand" href="/"><img src="/assets/icon-192.png" alt="">WayStation</a>
+<nav class="links">
+<a href="/#features">Features</a>
+<a href="/#pricing">Pricing</a>
+<a href="/tutorials.html">Tutorials</a>
+<a href="/support.html">Support</a>
+<a class="btn primary sm" href="/download.html">Download</a>
+</nav></div></header>
+<main>
+<div class="wrap doc">
+<h1>You're in. Welcome to WayStation Pro.</h1>
+<p class="meta">Thanks for supporting WayStation.</p>
+<div class="dl"><p><b>Your Pro key</b></p><p class="mono" id="key">Loading&hellip;</p>
+<p style="font-size:13px;color:var(--faint);margin-top:10px">Save this key. You'll need it to restore Pro on a new phone.</p></div>
+<p><a class="btn primary" id="open" href="/download.html">Open WayStation</a></p>
+<h2>Next steps</h2>
+<ol><li>Don't have the app yet? <a href="/download.html">Download it here</a>.</li>
+<li>Open WayStation, go to <b>Settings</b>, tap <b>Restore Pro</b>, and paste your key.</li></ol>
+<p>Questions? Email <a href="mailto:playhardllc@outlook.com">playhardllc@outlook.com</a>.</p>
+</div>
+<script>
+var id=new URLSearchParams(location.search).get('session_id');
+var k=document.getElementById('key');
+if(id){k.textContent=id;document.getElementById('open').href='com.waystationsecurity.app://pro?key='+encodeURIComponent(id);}
+else{k.textContent='Your key is in your receipt email.';}
+</script></main>
+<footer><div class="wrap"><div>&copy; 2026 Play Hard LLC. WayStation is not affiliated with Microsoft, Apple or Google.</div>
+<div><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/support.html">Support</a><a href="/changelog.html">Changelog</a></div></div></footer>
+</body></html>
