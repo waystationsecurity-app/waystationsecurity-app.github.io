@@ -1,0 +1,66 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WayStation tutorials</title><meta name="description" content="Step-by-step guides for installing WayStation and linking Outlook, iCloud and IMAP email."><meta name="theme-color" content="#0b0f14">
+<meta property="og:title" content="WayStation tutorials"><meta property="og:description" content="Step-by-step guides for installing WayStation and linking Outlook, iCloud and IMAP email."><meta property="og:image" content="/assets/icon-512.png">
+<link rel="icon" href="/assets/favicon.png"><link rel="stylesheet" href="/assets/site.css"></head><body>
+<header class="nav"><div class="wrap">
+<a class="brand" href="/"><img src="/assets/icon-192.png" alt="">WayStation</a>
+<nav class="links">
+<a href="/#features">Features</a>
+<a href="/#pricing">Pricing</a>
+<a href="/tutorials.html" aria-current="page">Tutorials</a>
+<a href="/support.html">Support</a>
+<a class="btn primary sm" href="/download.html">Download</a>
+</nav></div></header>
+<main>
+<div class="wrap doc">
+<h1>Tutorials</h1>
+<p class="meta">Short guides for getting set up and getting the most out of WayStation.</p>
+<div class="toc"><a href="#install">Install</a><a href="#outlook">Outlook</a><a href="#icloud">iCloud</a><a href="#imap">Yahoo / AOL / other</a><a href="#folders">Folders and Junk</a><a href="#select">Bulk delete</a><a href="#scan">Threat checks</a><a href="#vault">Vault and wipe</a><a href="#remove">Remove an account</a></div>
+
+<h2 id="install">Install WayStation</h2>
+<p>Follow the steps on the <a href="/download.html">download page</a>. It takes about a minute.</p>
+
+<h2 id="outlook">Link Outlook, Hotmail, Live or MSN</h2>
+<ol><li>Open WayStation and tap <b>Outlook / Microsoft 365</b>, then <b>Continue to Microsoft</b>.</li>
+<li>Microsoft's sign-in page opens. Type the email address you want to link. WayStation always asks, so it never picks the wrong account.</li>
+<li>Sign in, then tap <b>Accept</b> on the permissions screen. WayStation asks for permission to read and manage your mail so it can show emails and move the ones you choose to Trash.</li>
+<li>You're sent back to WayStation with your inbox loaded.</li></ol>
+<div class="callout">Work or school Microsoft accounts may be blocked by your organization until WayStation's publisher verification is complete. Personal accounts work now.</div>
+
+<h2 id="icloud">Link iCloud Mail</h2>
+<ol><li>On any device, go to <a href="https://account.apple.com">account.apple.com</a> and sign in.</li>
+<li>Open <b>Sign-In and Security</b> &rarr; <b>App-Specific Passwords</b> and create one named "WayStation".</li>
+<li>In WayStation, tap <b>iCloud Mail</b>, enter your iCloud email and the app-specific password (not your Apple ID password), and tap <b>Connect</b>.</li></ol>
+
+<h2 id="imap">Link Yahoo, AOL or other email</h2>
+<ol><li>Create an app password with your provider (Yahoo and AOL: Account Security &rarr; Generate app password).</li>
+<li>In WayStation, tap <b>Other (IMAP)</b>.</li>
+<li>Enter the IMAP server, your email and the app password, then tap <b>Connect</b>.</li></ol>
+<p>Common IMAP servers: Yahoo <code>imap.mail.yahoo.com</code>, AOL <code>imap.aol.com</code>, Zoho <code>imap.zoho.com</code>. WayStation only connects over an encrypted connection (port 993).</p>
+
+<h2 id="folders">Folders and Junk</h2>
+<p>Tap the folder bar at the top of your inbox to switch folders. Junk is highlighted because that's where most threats land. Outlook users can also pick <b>Focused</b> or <b>Other</b>. Scroll down to load more emails, 30 at a time.</p>
+
+<h2 id="select">Select and bulk delete</h2>
+<ol><li>Tap <b>Select</b>, or press and hold any email.</li>
+<li>Tap more emails, or tap <b>Select all</b>.</li>
+<li>Tap <b>Delete&hellip;</b> and choose <b>Remove from this phone only</b> (Pro) or <b>Delete from my account</b>. Account deletes go to your provider's Trash.</li></ol>
+
+<h2 id="scan">Threat checks (Pro)</h2>
+<p>Every email in the list is checked as it loads, and gets a label: <b>Clean</b>, <b>Suspicious</b> or <b>Threat</b>. Open one to see exactly why. WayStation checks:</p>
+<ul><li>Whether the sender passed email authentication (SPF, DKIM, DMARC)</li>
+<li>Look-alike sender and link domains (for example paypa1-verify.co)</li>
+<li>Links whose text says one site but go to another</li>
+<li>Links to raw IP addresses, disguised characters and link shorteners</li>
+<li>Risky attachments: programs, disguised files, macro documents, web-page files and archives</li></ul>
+<p>Flagged attachments are quarantined and can't be opened.</p>
+
+<h2 id="vault">Vault and wipe on close (Pro)</h2>
+<p>Tap <b>Save to vault</b> on any email you want to keep. Vault emails are encrypted on your phone and stay after you close WayStation. When you tap <b>Close &amp; wipe</b>, everything you didn't save is erased from your phone. Your email account isn't changed unless you turned on <b>Also delete opened emails from my account</b> in Settings.</p>
+
+<h2 id="remove">Remove an account</h2>
+<p>Open <b>Settings</b> (gear icon) and tap <b>Remove</b> next to the account. WayStation deletes its saved sign-in from your phone. For Outlook, you can also remove WayStation's access at <a href="https://account.live.com/consent/Manage">account.live.com/consent/Manage</a>.</p>
+</div></main>
+<footer><div class="wrap"><div>&copy; 2026 Play Hard LLC. WayStation is not affiliated with Microsoft, Apple or Google.</div>
+<div><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/support.html">Support</a><a href="/changelog.html">Changelog</a></div></div></footer>
+</body></html>
