@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>WayStation key maker</title><link rel="stylesheet" href="/assets/site.css"></head><body><main class="wrap doc">
+<h1>Pro key maker</h1><p class="meta">For Play Hard LLC only. Nothing here works without your private key, which stays on this device.</p>
+<div id="setup" class="dl"><p><b>One-time setup:</b> paste the contents of <code>pro-key-private.json</code>.</p>
+<textarea id="pri" rows="4" style="width:100%;font:12px monospace"></textarea><p><button class="btn primary" id="save">Save on this device</button></p></div>
+<div id="make" class="dl" hidden>
+<p><label>Buyer email<br><input id="em" type="email" style="width:100%;padding:10px;font-size:16px"></label></p>
+<p><label><input type="radio" name="p" value="y" checked> Yearly (good for 372 days)</label><br><label><input type="radio" name="p" value="m"> Monthly (good for 38 days, send a new one each renewal)</label></p>
+<p><button class="btn primary" id="go">Make key</button></p>
+<p class="mono" id="out" style="display:block;white-space:pre-wrap"></p>
+<p><button class="btn" id="cp" hidden>Copy key</button> <a class="btn" id="mail" hidden>Email it</a></p>
+<p><button class="btn" id="forget" style="margin-top:20px">Remove private key from this device</button></p></div>
+<script>
+const $=id=>document.getElementById(id), b64=u=>btoa(String.fromCharCode(...new Uint8Array(u))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+const show=()=>{const has=!!localStorage.getItem('wsPri');$('setup').hidden=has;$('make').hidden=!has;};show();
+$('save').onclick=()=>{try{JSON.parse($('pri').value);localStorage.setItem('wsPri',$('pri').value.trim());show();}catch{alert('That isn\'t the key file contents.');}};
+$('forget').onclick=()=>{localStorage.removeItem('wsPri');show();};
+$('go').onclick=async()=>{
+ const e=$('em').value.trim().toLowerCase(); if(!e) return alert('Enter the buyer email');
+ const p=document.querySelector('[name=p]:checked').value, d=new Date(); d.setDate(d.getDate()+(p==='y'?372:38));
+ const payload=b64(new TextEncoder().encode(JSON.stringify({e,p,x:d.toISOString().slice(0,10)})));
+ const k=await crypto.subtle.importKey('jwk',JSON.parse(localStorage.getItem('wsPri')),{name:'ECDSA',namedCurve:'P-256'},false,['sign']);
+ const sig=b64(await crypto.subtle.sign({name:'ECDSA',hash:'SHA-256'},k,new TextEncoder().encode(payload)));
+ const key=payload+'.'+sig; $('out').textContent=key; $('cp').hidden=false; $('mail').hidden=false;
+ $('cp').onclick=()=>navigator.clipboard.writeText(key).then(()=>alert('Copied'));
+ $('mail').href='mailto:'+e+'?subject='+encodeURIComponent('Your WayStation Pro key')+'&body='+encodeURIComponent('Thanks for getting WayStation Pro!\n\n1. Install WayStation: https://waystationsecurity-app.github.io/download.html\n2. Open Settings, tap "Enter Pro key / restore", paste this key, and tap Unlock Pro:\n\n'+key+'\n\nGood until '+d.toISOString().slice(0,10)+'. Questions: reply to this email.\n\nPlay Hard LLC');
+};
+</script></main></body></html>
