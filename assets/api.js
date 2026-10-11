@@ -1,1 +1,1 @@
-window.WS_API = 'https://waystation-pro.waystation.workers.dev';
+window.WS_API = 'https://waystation-pro.waystationapp.workers.dev';
