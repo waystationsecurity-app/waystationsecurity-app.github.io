@@ -15,14 +15,23 @@
 <div class="wrap doc">
 <h1>You're in. Welcome to WayStation Pro.</h1>
 <p class="meta">Thanks for supporting WayStation.</p>
-<div class="dl"><p><b>Your Pro key is on its way.</b> We email it to the address you used at checkout, usually within a few hours. Check your spam folder too.</p></div>
+<div class="dl"><p><b>Your Pro key</b></p><p class="mono" id="key" style="display:block;white-space:pre-wrap">Getting your key&hellip;</p>
+<p><button class="btn" id="cp" hidden>Copy key</button></p>
+<p style="font-size:13px;color:var(--faint);margin-top:10px">Save this key somewhere safe. You'll need it to restore Pro on a new phone.</p></div>
 <p><a class="btn primary" href="/download.html">Download WayStation</a></p>
 <h2>Next steps</h2>
 <ol><li>Don't have the app yet? <a href="/download.html">Download it here</a>.</li>
 <li>Open WayStation, go to <b>Settings</b>, tap <b>Enter Pro key / restore</b>, paste your key, and tap <b>Unlock Pro</b>.</li></ol>
 <p>Questions? Email <a href="mailto:playhardllc@outlook.com">playhardllc@outlook.com</a>.</p>
 </div>
-</main>
+<script src="/assets/api.js"></script><script>
+(async()=>{const k=document.getElementById('key'),id=new URLSearchParams(location.search).get('session_id');
+if(!id){k.textContent='Your key will be emailed to you.';return;}
+for(let i=0;i<5;i++){try{const r=await fetch(WS_API+'/claim?session_id='+encodeURIComponent(id));const d=await r.json();
+if(d.key){k.textContent=d.key;const b=document.getElementById('cp');b.hidden=false;b.onclick=()=>navigator.clipboard.writeText(d.key).then(()=>b.textContent='Copied');return;}}catch(e){}
+await new Promise(r=>setTimeout(r,3000));}
+k.textContent='We couldn\'t load your key automatically. It will be emailed to you shortly.';})();
+</script></main>
 <footer><div class="wrap"><div>&copy; 2026 Play Hard LLC. WayStation is not affiliated with Microsoft, Apple or Google.</div>
 <div><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/support.html">Support</a><a href="/changelog.html">Changelog</a></div></div></footer>
 </body></html>
