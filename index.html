@@ -44,6 +44,32 @@
 <figure><img src="/assets/s5-select.png" alt="Selecting several emails" loading="lazy"><figcaption>Select many and delete or save at once</figcaption></figure>
 </div></div></section>
 
+<section id="how-it-works"><div class="wrap">
+<h2>How your mail flows</h2>
+<p class="sub">No WayStation server ever holds your email. Here is the exact path a message takes.</p>
+<div class="flow">
+<div class="step"><span class="n">1</span><div><h3>Your phone talks to your provider — directly</h3><p>WayStation connects straight from your phone to Outlook, iCloud, Yahoo, or any IMAP account. There is no WayStation mail server in the middle.</p></div></div>
+<div class="step"><span class="n">2</span><div><h3>The message is scrubbed on arrival</h3><p>Scripts are stripped, remote images and tracking pixels are blocked, and links are disarmed before you ever see the message.</p></div></div>
+<div class="step"><span class="n">3</span><div><h3>It opens in a sealed viewer</h3><p>The email renders in a locked-down view: JavaScript stays off, nothing downloads on its own, and links can't fire by accident.</p></div></div>
+<div class="step"><span class="n">4</span><div><h3>Pro checks run on your phone</h3><p>Pro verifies the sender, flags look-alike domains and deceptive links, and quarantines risky attachment file types. Attachment <em>contents</em> are never scanned — a "clean" result means the message passed, not the files inside it.</p></div></div>
+<div class="step"><span class="n">5</span><div><h3>Close it and it's gone — or vaulted</h3><p>Unsaved mail is wiped from your phone when you close it. Mail you keep goes into an encrypted vault on your device.</p></div></div>
+</div>
+<div class="card never"><h3>What never happens</h3><p>Your email is never uploaded to us, never stored on our servers, and never used to train anything. The only WayStation server in existence handles Pro license keys — it never sees your mail.</p></div>
+</div></section>
+
+<style>
+/* Minimal flow styles — move to /assets/site.css on publish */
+#how-it-works .flow{position:relative;margin:1.5rem 0;padding-left:.5rem}
+#how-it-works .step{position:relative;display:flex;gap:1rem;padding:0 0 1.75rem 0}
+#how-it-works .step:last-child{padding-bottom:0}
+#how-it-works .step::before{content:"";position:absolute;left:1.05rem;top:2.6rem;bottom:-.2rem;width:2px;background:#1e2a38}
+#how-it-works .step:last-child::before{display:none}
+#how-it-works .n{flex:0 0 2.1rem;height:2.1rem;border-radius:50%;background:#12325a;color:#7db8ff;font-weight:700;display:flex;align-items:center;justify-content:center;z-index:1}
+#how-it-works .step h3{margin:.25rem 0 .35rem;font-size:1.05rem}
+#how-it-works .step p{margin:0;color:#9fb0c3}
+#how-it-works .card.never{margin-top:1.75rem;border:1px solid #2a3b52;background:#0e1622}
+#how-it-works .card.never h3{color:#7db8ff}
+</style>
 <section id="pricing"><div class="wrap">
 <h2>Pricing</h2>
 <p class="sub">Start free. Upgrade when you want scanning and the vault.</p>
