@@ -22,16 +22,16 @@
 <h2>Next steps</h2>
 <ol><li>Don't have the app yet? <a href="/download.html">Download it here</a>.</li>
 <li>Open WayStation, go to <b>Settings</b>, tap <b>Enter Pro key / restore</b>, paste your key, and tap <b>Unlock Pro</b>.</li></ol>
-<p>Questions? Email <a href="mailto:playhardllc@outlook.com">playhardllc@outlook.com</a>.</p>
+<p>Questions? Email <a href="mailto:waystationapp@outlook.com">waystationapp@outlook.com</a>.</p>
 </div>
 <script src="/assets/api.js"></script><script>
 (async()=>{const k=document.getElementById('key'),id=new URLSearchParams(location.search).get('session_id');
-if(!id){k.textContent='Your key will be emailed to you.';return;}
+if(!id){k.textContent='We couldn\u2019t find your checkout session. Your Pro key appears on this page automatically right after payment.';return;}
 for(let i=0;i<5;i++){try{const r=await fetch(WS_API+'/claim?session_id='+encodeURIComponent(id));const d=await r.json();
 if(d.key){k.textContent=d.key;const b=document.getElementById('cp');b.hidden=false;b.onclick=()=>navigator.clipboard.writeText(d.key).then(()=>b.textContent='Copied');return;}}catch(e){}
 await new Promise(r=>setTimeout(r,3000));}
-k.textContent='We couldn\'t load your key automatically. It will be emailed to you shortly.';})();
+k.textContent='We couldn\'t load your key automatically. Email waystationapp@outlook.com with your receipt and we\u2019ll sort it out.';})();
 </script></main>
-<footer><div class="wrap"><div>&copy; 2026 Play Hard LLC. WayStation is not affiliated with Microsoft, Apple or Google.</div>
-<div><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/support.html">Support</a><a href="/changelog.html">Changelog</a></div></div></footer>
+<footer><div class="wrap"><div>&copy; 2026 WayStation. WayStation is not affiliated with Microsoft, Apple or Google.</div>
+<div><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/support.html">Support</a><a href="/changelog.html">Changelog</a><!-- TODO: paste your Stripe customer-portal link (Stripe dashboard > Settings > Customer portal) --><!-- TODO: Manage subscription link here once the Stripe portal URL is pasted --></div></div></footer>
 </body></html>
