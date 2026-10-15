@@ -1,6 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>WayStation Privacy Policy</title><meta name="description" content="WayStation is a sandboxed email app for Android. Read Outlook, iCloud and IMAP mail without scripts, trackers or hidden downloads reaching your phone."><meta name="theme-color" content="#0b0f14">
-<meta property="og:title" content="WayStation — Open email without letting it in"><meta property="og:description" content="WayStation is a sandboxed email app for Android. Read Outlook, iCloud and IMAP mail without scripts, trackers or hidden downloads reaching your phone."><meta property="og:image" content="/assets/icon-512.png">
+<title>WayStation Privacy Policy</title><meta name="description" content="WayStation is a sandboxed email app for Android. Read Outlook mail without scripts, trackers or hidden downloads reaching your phone. iCloud and IMAP support is coming soon."><meta name="theme-color" content="#0b0f14">
+<meta property="og:title" content="WayStation — Open email without letting it in"><meta property="og:description" content="WayStation is a sandboxed email app for Android. Read Outlook mail without scripts, trackers or hidden downloads reaching your phone. iCloud and IMAP support is coming soon."><meta property="og:image" content="/assets/icon-512.png">
 <link rel="icon" href="/assets/favicon.png"><link rel="stylesheet" href="/assets/site.css"></head><body>
 <header class="nav"><div class="wrap">
 <a class="brand" href="/"><img src="/assets/icon-192.png" alt="">WayStation</a>
@@ -22,7 +22,7 @@
 <h2>1. Information that stays on your phone</h2>
 <ul>
 <li><b>Linked accounts.</b> Your email address, provider type and, for IMAP, the server name.</li>
-<li><b>Sign-in secrets.</b> Your IMAP or app-specific password, or your Microsoft sign-in token. These are stored in Android's encrypted, hardware-backed storage and are used only to connect to your provider.</li>
+<li><b>Sign-in secrets.</b> Your Microsoft sign-in token. (IMAP and app-specific passwords will be stored the same way when IMAP support arrives.) These are stored in Android's encrypted storage (Android Keystore) and are used only to connect to your provider.</li>
 <li><b>Emails you open.</b> Messages are loaded into the app's memory while you use it. In Pro, anything you don't save is erased when you close WayStation.</li>
 <li><b>Your vault (Pro).</b> Emails you choose to save are stored encrypted on your phone until you remove them or uninstall WayStation.</li>
 <li><b>Settings.</b> Your plan and preferences.</li>
@@ -33,9 +33,9 @@
 <p>WayStation connects directly from your phone to your provider:</p>
 <ul>
 <li><b>Microsoft (Outlook, Hotmail, Live, MSN, Microsoft 365).</b> You sign in on Microsoft's own page. WayStation requests <code>Mail.ReadWrite</code> (to show your mail and move emails you choose to Deleted Items), <code>User.Read</code> (to learn your email address) and <code>offline_access</code> (to stay signed in). WayStation never sees your Microsoft password. Microsoft's handling of your data is covered by the <a href="https://privacy.microsoft.com/privacystatement">Microsoft Privacy Statement</a>.</li>
-<li><b>iCloud and other IMAP providers.</b> WayStation connects to your provider's IMAP server over an encrypted connection (TLS, port 993) using the credentials you enter.</li>
+<li><b>iCloud and other IMAP providers (coming soon).</b> When they arrive, WayStation will connect to your provider's IMAP server over an encrypted connection (TLS, port 993) using the credentials you enter.</li>
 </ul>
-<p>WayStation only changes your mailbox when you ask it to: deleting moves mail to your provider's Trash, and the optional "delete opened emails on close" setting is off unless you turn it on. Opening an email in WayStation does not mark it as read.</p>
+<p>WayStation only changes your mailbox when you ask it to: deleting moves mail to your provider's Trash, and the optional "delete opened emails on close" setting is off unless you turn it on. Opening an email in WayStation does not mark it as read in Outlook. (IMAP accounts, when they arrive, will fetch messages without marking them read.)</p>
 
 <h2>3. Threat checks (Pro)</h2>
 <p>Most checks run entirely on your phone: sender authentication results, look-alike domains, link tricks and risky file types.</p>
@@ -59,7 +59,7 @@
 <p>Depending on where you live (for example California or the EU), you may have rights to access, correct, delete or port your information. Contact us and we'll help.</p>
 
 <h2>8. Security</h2>
-<p>Secrets are stored in Android's encrypted storage. Mail connections use TLS. Emails are shown in a sandbox with scripts, remote content and links disabled. No system is perfectly secure, so keep your phone locked and up to date.</p>
+<p>Sign-in secrets are stored in Android's encrypted storage. (Your Pro license key moves to the same encrypted storage in an upcoming update.) Mail connections use TLS. Emails are shown in a sandbox with scripts, remote content and links disabled. No system is perfectly secure, so keep your phone locked and up to date.</p>
 
 <h2>9. Children</h2>
 <p>WayStation is not meant for children under 13, and we don't knowingly collect information from them.</p>
