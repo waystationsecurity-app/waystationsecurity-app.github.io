@@ -20,20 +20,20 @@
 <textarea id="key" rows="3" placeholder="Paste your Pro key" style="width:100%;margin-top:10px;padding:12px;font-family:ui-monospace,monospace;font-size:13px;word-break:break-all"></textarea>
 <p><button class="btn" id="cancel">Cancel subscription</button></p>
 <p id="msg" style="font-size:14px;margin-top:10px"></p></div>
-<p>Changed your mind? If your subscription is scheduled to cancel but hasn’t ended yet, you can undo it in the <a href="https://billing.stripe.com/p/login/aFa4gB8Sibo29UNfnU6sw01">customer portal</a>.</p>
+<p>Changed your mind? If your subscription is scheduled to cancel but hasn't ended yet, you can undo it in the <a href="https://billing.stripe.com/p/login/aFa4gB8Sibo29UNfnU6sw01">customer portal</a>.</p>
 <p>Questions? Email <a href="mailto:waystationapp@outlook.com">waystationapp@outlook.com</a>.</p>
 </div>
 <script src="/assets/api.js"></script><script>
-(function(){const k=document.getElementById("key"),b=document.getElementById("cancel"),m=document.getElementById("msg");
-b.onclick=async()=>{const key=k.value.trim();if(!key){m.textContent="Paste your Pro key first.";return;}
-b.disabled=true;m.textContent="Canceling…";
-try{const r=await fetch(WS_API+"/cancel",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({key})});
+(function(){const k=document.getElementById('key'),b=document.getElementById('cancel'),m=document.getElementById('msg');
+b.onclick=async()=>{const key=k.value.trim();if(!key){m.textContent='Paste your Pro key first.';return;}
+b.disabled=true;m.textContent='Canceling…';
+try{const r=await fetch(WS_API+'/cancel',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key})});
 const d=await r.json().catch(()=>({}));
-if(d.canceled){const end=d.ends_at?new Date(d.ends_at*1000).toLocaleDateString(undefined,{month:"long",day:"numeric",year:"numeric"}):null;
-m.textContent=(d.already?"Already canceled — ":"Subscription canceled — ")+(end?("Pro until "+end+", no future charges."):("No future charges."));return;}
-if(d.error){m.textContent=(/invalid key/i.test(d.error)?"That key doesn’t match a subscription. Check you pasted the full key.":d.error);b.disabled=false;return;}
-m.textContent="Couldn’t cancel. Try again.";b.disabled=false;}
-catch(e){m.textContent="Couldn’t reach the server. Check your connection and try again.";b.disabled=false;}};})();
+if(d.canceled){const end=d.ends_at?new Date(d.ends_at*1000).toLocaleDateString(undefined,{month:'long',day:'numeric',year:'numeric'}):null;
+m.textContent=(d.already?'Already canceled — ':'Subscription canceled — ')+(end?('Pro until '+end+', no future charges.'):('No future charges.'));return;}
+if(d.error){m.textContent=(/invalid key/i.test(d.error)?"That key doesn't match a subscription. Check you pasted the full key.":d.error);b.disabled=false;return;}
+m.textContent='Couldn’t cancel. Try again.';b.disabled=false;}
+catch(e){m.textContent="Couldn't reach the server. Check your connection and try again.";b.disabled=false;}};})();
 </script></main>
 <footer><div class="wrap"><div>&copy; 2026 WayStation Security. WayStation is not affiliated with Microsoft, Apple or Google.</div>
 <div><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/support.html">Support</a><a href="/changelog.html">Changelog</a><a href="https://billing.stripe.com/p/login/aFa4gB8Sibo29UNfnU6sw01">Manage subscription</a></div></div></footer>
