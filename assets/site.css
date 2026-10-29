@@ -62,3 +62,24 @@ details p{color:var(--muted);margin-top:8px}
 footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-size:14px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
 footer a{color:var(--muted);text-decoration:none;margin-right:16px}
+
+/* Anchor jumps (tutorial pills, nav section links) must stop below the 64px
+   sticky header, not underneath it — Charles, Oct 28, 2026 (change #4). */
+[id]{scroll-margin-top:76px}
+
+/* Footer links must wrap as whole units — never split a two-word link
+   ("Manage subscription") across lines. Charles, Oct 28, 2026 (change #8). */
+footer a{white-space:nowrap}
+
+/* Hamburger menu for small screens (Charles, Oct 28, 2026, change #12):
+   below 720px the link row hides, leaving phones with no menu at all —
+   the burger fills that hole. Desktop keeps the full row. */
+.burger{display:none}
+@media(max-width:720px){
+  .burger{display:block;order:-1;position:relative}
+  .burger summary{list-style:none;cursor:pointer;color:var(--text);font-size:16px;padding:8px 4px}
+  .burger summary::-webkit-details-marker{display:none}
+  .burger-links{position:absolute;top:calc(100% + 14px);left:-16px;background:#0d1319;border:1px solid var(--line);border-radius:12px;padding:8px 0;min-width:220px;z-index:20;box-shadow:0 12px 32px rgba(0,0,0,.5)}
+  .burger-links a{display:block;padding:11px 20px;color:var(--text);text-decoration:none;font-size:16px}
+  .burger-links a:hover{background:#131b24}
+}

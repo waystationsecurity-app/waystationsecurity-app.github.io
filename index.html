@@ -4,10 +4,25 @@
 <link rel="icon" href="/assets/favicon.png"><link rel="stylesheet" href="/assets/site.css"></head><body>
 <header class="nav"><div class="wrap">
 <a class="brand" href="/"><img src="/assets/icon-192.png" alt="">WayStation</a>
-<nav class="links">
-<a href="/#features" aria-current="page">Features</a>
-<a href="/#pricing">Pricing</a>
+<details class="burger"><summary>☰ Menu</summary>
+<nav class="burger-links">
+<a href="/">Home</a>
+<a href="/features.html">Features</a>
+<a href="/see-it-in-action.html">See It in Action</a>
+<a href="/how-it-works.html">How It Works</a>
+<a href="/pricing.html">Pricing</a>
 <a href="/tutorials.html">Tutorials</a>
+<a href="/faq.html">FAQs</a>
+<a href="/support.html">Support</a>
+</nav></details>
+<nav class="links">
+<a href="/">Home</a>
+<a href="/features.html">Features</a>
+<a href="/see-it-in-action.html">See It in Action</a>
+<a href="/how-it-works.html">How It Works</a>
+<a href="/pricing.html">Pricing</a>
+<a href="/tutorials.html">Tutorials</a>
+<a href="/faq.html">FAQs</a>
 <a href="/support.html">Support</a>
 <a class="btn primary sm" href="/download.html">Download</a>
 </nav></div></header>
@@ -16,176 +31,21 @@
 <div>
 <h1>Open email without letting it in.</h1>
 <p class="lead">WayStation opens every message in a sealed sandbox. Scripts don't run, trackers don't load, and nothing downloads on its own. Pro checks every sender and link before you touch it.</p>
-<div class="ctas"><a class="btn primary" href="/download.html">Download for Android</a><a class="btn" href="/tutorials.html">See how it works</a></div>
-<p class="note">Free to use. Works with Outlook, Hotmail, MSN, and Microsoft 365. iCloud, Yahoo, AOL, and other IMAP accounts are coming soon. Gmail is coming soon.</p>
+<div class="ctas"><a class="btn primary" href="/download.html">Download for Android</a><a class="btn" href="/how-it-works.html">See how it works</a></div>
+<p class="note">Free to use. Works with Outlook, Hotmail, MSN, and Microsoft 365. iCloud, Yahoo, AOL, other IMAP accounts, and Gmail are coming soon.</p>
 </div>
 <img class="phone" src="/assets/s4-threat.png" alt="WayStation showing a phishing email flagged as a threat" width="390" height="800">
 </div>
 
 <section id="features"><div class="wrap">
 <h2>Built for the emails you don't trust</h2>
-<p class="sub">Most phishing and malware arrives by email, and most of it lands in Junk. WayStation lets you look without the risk.</p>
-<div class="grid">
-<div class="card"><h3>Sealed sandbox</h3><p>Emails open in an isolated viewer. JavaScript is off, remote images and tracking pixels are blocked, and links can't be tapped by accident.</p></div>
-<div class="card"><h3>Straight to your provider</h3><p>WayStation connects directly from your phone to Outlook. iCloud and other IMAP accounts are coming soon. Your email never passes through a WayStation server.</p></div>
-<div class="card"><h3>Every folder</h3><p>Open Junk, Spam, Focused, Other or any folder. Scroll through as much mail as you have.</p></div>
-<div class="card"><h3>Threat checks (Pro)</h3><p>Spoofed senders, look-alike domains like paypa1.co, links that lie about where they go, and disguised files like <span class="mono">invoice.pdf.exe</span>.</p></div>
-<div class="card"><h3>Save or wipe (Pro)</h3><p>Save the emails you want to an encrypted vault on your phone. Everything else is erased when you close WayStation.</p></div>
-<div class="card"><h3>Bulk clean-up</h3><p>Select a pile of junk and send it all to Trash at once. Deleted mail is recoverable from your provider's Trash for a while.</p></div>
-</div></div></section>
-
-<section><div class="wrap">
-<h2>See it in action</h2>
-<p class="sub">Screens from the Android app.</p>
-<div class="shots">
-<figure><img src="/assets/s3-junk.png" alt="Junk folder with threat labels" loading="lazy"><figcaption>Junk folder, scanned before you open anything</figcaption></figure>
-<figure><img src="/assets/s4-threat.png" alt="Threat report for a phishing email" loading="lazy"><figcaption>Why an email was flagged, in plain words</figcaption></figure>
-<figure><img src="/assets/s2-folders.png" alt="Folder picker" loading="lazy"><figcaption>Every folder, including Focused and Other</figcaption></figure>
-<figure><img src="/assets/s5-select.png" alt="Selecting several emails" loading="lazy"><figcaption>Select many and delete or save at once</figcaption></figure>
-</div></div></section>
-
-<section id="how-it-works"><div class="wrap">
-<h2>How your mail flows</h2>
-<p class="sub">No WayStation server ever holds your email. Here is the exact path a message takes.</p>
-<!-- ============================================================
-  WayStation website — "How your mail flows" visual flowchart
-  Prepared 2026-10-13 ~12:05 EDT; CORRECTED 2026-10-15 ~12:55 EDT
-  to match Fix 1 (live Oct 15): IMAP/iCloud/Yahoo/AOL are
-  "coming soon" — the Oct 13 draft wrongly listed them as working,
-  which would have undone Fix 1 if pasted as-is. Do NOT revert
-  Node 1 to the old wording.
-  Self-contained: paste this whole block into index.html in the
-  "How your mail flows" section, BETWEEN the section's <p class="sub">
-  line and the existing <div class="flow"> (find by those anchors —
-  line numbers shifted with Fix 1, so do NOT use the old "lines 49-50").
-  Do NOT delete anything: the numbered text list and the
-  "What never happens" card stay below it as the detail layer.
-  All copy mirrors the live site's already-approved wording.
-  Theme matches site.css vars (dark bg, lime #b8f35c accent).
-============================================================ -->
-<style>
-  .ws-flow { max-width: 720px; margin: 28px auto 8px; }
-  .ws-node {
-    background: #121821;
-    border: 1px solid #253041;
-    border-radius: 16px;
-    padding: 16px 18px;
-    display: flex; gap: 14px; align-items: flex-start;
-  }
-  .ws-badge {
-    flex: 0 0 auto;
-    width: 34px; height: 34px; border-radius: 50%;
-    background: #b8f35c; color: #142005;
-    font-weight: 800; font-size: 16px;
-    display: flex; align-items: center; justify-content: center;
-    margin-top: 2px;
-  }
-  .ws-node h3 { margin: 0 0 4px; font-size: 17px; color: #e9eef2; }
-  .ws-node p { margin: 0; font-size: 15px; color: #9aa7b4; line-height: 1.45; }
-  .ws-arrow {
-    width: 2px; height: 26px; background: #253041;
-    margin: 0 auto; position: relative;
-  }
-  .ws-arrow::after {
-    content: ""; position: absolute; left: 50%; bottom: -1px;
-    transform: translateX(-50%);
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-top: 9px solid #253041;
-  }
-  .ws-detail {
-    margin-top: 12px;
-    background: #18202b;
-    border: 1px dashed #253041;
-    border-radius: 12px;
-    padding: 12px 14px;
-  }
-  .ws-detail h4 {
-    margin: 0 0 8px; font-size: 14px; color: #e9eef2;
-    text-transform: uppercase; letter-spacing: .04em;
-  }
-  .ws-detail ul { margin: 0; padding: 0; list-style: none; }
-  .ws-detail li {
-    font-size: 14px; color: #9aa7b4; line-height: 1.5;
-    padding-left: 20px; position: relative; margin-bottom: 6px;
-  }
-  .ws-detail li:last-child { margin-bottom: 0; }
-  .ws-detail li::before {
-    content: "›"; position: absolute; left: 4px; color: #b8f35c;
-    font-weight: 800; font-size: 16px; line-height: 1.2;
-  }
-  .ws-detail li strong { color: #e9eef2; font-weight: 600; }
-</style>
-
-<div class="ws-flow" role="img" aria-label="Flowchart: the path an email takes through WayStation, from your phone to your provider and back, with nothing uploaded.">
-
-  <div class="ws-node">
-    <span class="ws-badge">1</span>
-    <div>
-      <h3>Your phone talks to your provider — directly</h3>
-      <p>WayStation connects straight from your phone to Outlook, Hotmail, MSN, and Microsoft 365. iCloud, Yahoo, AOL, and other IMAP accounts are coming soon. No WayStation mail server in the middle.</p>
-    </div>
-  </div>
-  <div class="ws-arrow" aria-hidden="true"></div>
-
-  <div class="ws-node">
-    <span class="ws-badge">2</span>
-    <div>
-      <h3>The message is scrubbed on arrival</h3>
-      <p>Scripts are stripped, remote images and tracking pixels are blocked, and links are disarmed before you ever see the message.</p>
-      <!-- (wording matches the live site's step 2 verbatim) -->
-    </div>
-  </div>
-  <div class="ws-arrow" aria-hidden="true"></div>
-
-  <div class="ws-node">
-    <span class="ws-badge">3</span>
-    <div>
-      <h3>It opens in a sealed viewer</h3>
-      <p>The email renders in a locked-down view: JavaScript stays off, nothing downloads on its own, and links can't fire by accident.</p>
-    </div>
-  </div>
-  <div class="ws-arrow" aria-hidden="true"></div>
-
-  <div class="ws-node">
-    <span class="ws-badge">4</span>
-    <div>
-      <h3>Pro checks run on your phone</h3>
-      <p>Sender authentication, look-alike domains, deceptive links, and risky attachment file types — quarantined by name. Attachment <em>contents</em> are never scanned or uploaded.</p>
-      <div class="ws-detail">
-        <h4>What the app actually pulls from each email</h4>
-        <ul>
-          <li><strong>The Authentication-Results header</strong> → SPF, DKIM, and DMARC pass or fail.</li>
-          <li><strong>The From name and address</strong> → mismatch check (says "PayPal," isn't PayPal).</li>
-          <li><strong>Every link</strong> → its real destination vs. its visible text.</li>
-          <li><strong>Each attachment</strong> → file name, extension, size, and type. Never the file contents.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="ws-arrow" aria-hidden="true"></div>
-
-  <div class="ws-node">
-    <span class="ws-badge">5</span>
-    <div>
-      <h3>Close it and it's gone — or vaulted</h3>
-      <p>Unsaved mail is wiped from your phone when you close it. Mail you keep goes into an encrypted vault on your device.</p>
-    </div>
-  </div>
-
-</div>
-<!-- The existing "What never happens" card below this section already
-     covers the negative claims — intentionally not duplicated here. -->
-
-<div class="flow">
-<div class="step"><span class="n">1</span><div><h3>Your phone talks to your provider — directly</h3><p>WayStation connects straight from your phone to Outlook. iCloud, Yahoo, and other IMAP accounts are coming soon. There is no WayStation mail server in the middle.</p></div></div>
-<div class="step"><span class="n">2</span><div><h3>The message is scrubbed on arrival</h3><p>Scripts are stripped, remote images and tracking pixels are blocked, and links are disarmed before you ever see the message.</p></div></div>
-<div class="step"><span class="n">3</span><div><h3>It opens in a sealed viewer</h3><p>The email renders in a locked-down view: JavaScript stays off, nothing downloads on its own, and links can't fire by accident.</p></div></div>
-<div class="step"><span class="n">4</span><div><h3>Pro checks run on your phone</h3><p>Pro verifies the sender, flags look-alike domains and deceptive links, and quarantines risky attachment file types. Attachment <em>contents</em> are never scanned — a "no red flags" result means the message passed its checks, not the files inside it.</p></div></div>
-<div class="step"><span class="n">5</span><div><h3>Close it and it's gone — or vaulted</h3><p>Unsaved mail is wiped from your phone when you close it. Mail you keep goes into an encrypted vault on your device.</p></div></div>
-</div>
-<div class="card never"><h3>What never happens</h3><p>Your email is never uploaded to us, never stored on our servers, and never used to train anything. The only WayStation server in existence handles Pro license keys — it never sees your mail.</p></div>
+<p style="color:var(--muted);max-width:44em">A sealed viewer, on-device Pro checks, a vault for what you keep &mdash; and an inbox that wipes itself clean when you close the app.</p>
+<p><a class="btn" href="/features.html">See the features</a></p>
 </div></section>
+
+
+
+
 
 <style>
 /* Minimal flow styles — move to /assets/site.css on publish */
@@ -200,27 +60,9 @@
 #how-it-works .card.never{margin-top:1.75rem;border:1px solid #2a3b52;background:#0e1622}
 #how-it-works .card.never h3{color:#7db8ff}
 </style>
-<section id="pricing"><div class="wrap">
-<h2>Pricing</h2>
-<p class="sub">Start free. Upgrade when you want scanning and the vault.</p>
-<div class="plans">
-<div class="plan"><h3>Free</h3><div class="price">$0</div><div class="per">forever</div>
-<ul><li>Sandboxed viewing</li><li>1 email account</li><li>All folders, including Junk</li><li>Bulk delete</li></ul></div>
-<div class="plan pro"><h3>Pro</h3><div class="price">$4.99<span style="font-size:16px;font-weight:500">/mo</span></div><div class="per">or $39.99/year (save 33%) &middot; 7-day free trial</div>
-<ul><li>Everything in Free</li><li>Threat checks on every sender and link</li><li>Attachment quarantine</li><li>Save-or-wipe encrypted vault</li><li>Optional delete-from-account on close</li><li>Up to 5 email accounts</li></ul></div>
-</div>
-<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px"><a class="btn primary" href="https://buy.stripe.com/aFa8wR1pQajYeb34Jg6sw0b">Get Pro yearly &middot; $39.99</a><a class="btn" href="https://buy.stripe.com/bJe9AV7Oe4ZE8QJgrY6sw0c">Get Pro monthly &middot; $4.99</a></div>
-<p style="color:var(--muted);font-size:14px;margin-top:14px;max-width:44em">7-day free trial. After you subscribe, your Pro key appears on the confirmation page. In the app, open Settings, tap <b>Enter Pro key / restore</b>, and paste it. Questions: <a href="mailto:waystationapp@outlook.com">waystationapp@outlook.com</a>.</p>
-</div></section>
 
-<section id="faq"><div class="wrap">
-<h2>Questions</h2>
-<details><summary>Does WayStation read or store my email on a server?</summary><p>No. WayStation runs on your phone and talks directly to your email provider. There's no WayStation server holding your mail. Pro's threat checks run on your phone \u2014 sender authentication, look-alike domains, deceptive links, and risky attachment file types. Attachment contents are never scanned or uploaded.</p></details>
-<details><summary>Will WayStation delete anything from my account?</summary><p>Only if you tell it to. "Delete from my account" moves an email to your provider's Trash. Closing WayStation wipes emails from your phone, not from your account, unless you turn on the optional close setting.</p></details>
-<details><summary>Why isn't it in the Google Play Store yet?</summary><p>It's coming. For now you can install it directly from this site. Android will ask you to allow the install. The tutorials walk you through it.</p></details>
-<details><summary>Why can't I add Gmail?</summary><p>Google requires a security review before apps can read Gmail. Gmail support is coming after that review.</p></details>
-<details><summary>Is WayStation a replacement for antivirus?</summary><p>No. It's a safer way to look at email. It catches a lot, but no tool catches everything. Don't open files or sign in to links you weren't expecting.</p></details>
-</div></section>
+
+
 </main>
 <footer><div class="wrap"><div>&copy; 2026 WayStation Security. WayStation is not affiliated with Microsoft, Apple or Google.</div>
 <div><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/support.html">Support</a><a href="/changelog.html">Changelog</a><!-- TODO: paste your Stripe customer-portal link (Stripe dashboard > Settings > Customer portal) --><a href="https://billing.stripe.com/p/login/aFa4gB8Sibo29UNfnU6sw01">Manage subscription</a></div></div></footer>

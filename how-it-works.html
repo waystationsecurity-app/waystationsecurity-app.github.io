@@ -1,0 +1,148 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How your mail flows through WayStation</title><meta name="description" content="How your mail flows through WayStation: the exact path an email takes from your provider to your phone, with no WayStation server in the middle."><meta name="theme-color" content="#0b0f14">
+<meta property="og:title" content="WayStation changelog"><meta property="og:description" content="How your mail flows through WayStation: the exact path an email takes from your provider to your phone, with no WayStation server in the middle."><meta property="og:image" content="/assets/icon-512.png">
+<link rel="icon" href="/assets/favicon.png"><link rel="stylesheet" href="/assets/site.css"></head><body>
+<header class="nav"><div class="wrap">
+<a class="brand" href="/"><img src="/assets/icon-192.png" alt="">WayStation</a>
+<details class="burger"><summary>☰ Menu</summary>
+<nav class="burger-links">
+<a href="/">Home</a>
+<a href="/features.html">Features</a>
+<a href="/see-it-in-action.html">See It in Action</a>
+<a href="/how-it-works.html">How It Works</a>
+<a href="/pricing.html">Pricing</a>
+<a href="/tutorials.html">Tutorials</a>
+<a href="/faq.html">FAQs</a>
+<a href="/support.html">Support</a>
+</nav></details>
+<nav class="links">
+<a href="/">Home</a>
+<a href="/features.html">Features</a>
+<a href="/see-it-in-action.html">See It in Action</a>
+<a href="/how-it-works.html" aria-current="page">How It Works</a>
+<a href="/pricing.html">Pricing</a>
+<a href="/tutorials.html">Tutorials</a>
+<a href="/faq.html">FAQs</a>
+<a href="/support.html">Support</a>
+<a class="btn primary sm" href="/download.html">Download</a>
+</nav></div></header>
+<main>
+<div class="wrap doc">
+<h1>How your mail flows</h1>
+<p class="meta">No WayStation server ever holds your email. Here is the exact path a message takes.</p>
+<style>
+  .ws-flow { max-width: 720px; margin: 28px auto 8px; }
+  .ws-node {
+    background: #121821;
+    border: 1px solid #253041;
+    border-radius: 16px;
+    padding: 16px 18px;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .ws-badge {
+    flex: 0 0 auto;
+    width: 34px; height: 34px; border-radius: 50%;
+    background: #b8f35c; color: #142005;
+    font-weight: 800; font-size: 16px;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 2px;
+  }
+  .ws-node h3 { margin: 0 0 4px; font-size: 17px; color: #e9eef2; }
+  .ws-node p { margin: 0; font-size: 15px; color: #9aa7b4; line-height: 1.45; }
+  .ws-arrow {
+    width: 2px; height: 26px; background: #253041;
+    margin: 0 auto; position: relative;
+  }
+  .ws-arrow::after {
+    content: ""; position: absolute; left: 50%; bottom: -1px;
+    transform: translateX(-50%);
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 9px solid #253041;
+  }
+  .ws-detail {
+    margin-top: 12px;
+    background: #18202b;
+    border: 1px dashed #253041;
+    border-radius: 12px;
+    padding: 12px 14px;
+  }
+  .ws-detail h4 {
+    margin: 0 0 8px; font-size: 14px; color: #e9eef2;
+    text-transform: uppercase; letter-spacing: .04em;
+  }
+  .ws-detail ul { margin: 0; padding: 0; list-style: none; }
+  .ws-detail li {
+    font-size: 14px; color: #9aa7b4; line-height: 1.5;
+    padding-left: 20px; position: relative; margin-bottom: 6px;
+  }
+  .ws-detail li:last-child { margin-bottom: 0; }
+  .ws-detail li::before {
+    content: "›"; position: absolute; left: 4px; color: #b8f35c;
+    font-weight: 800; font-size: 16px; line-height: 1.2;
+  }
+  .ws-detail li strong { color: #e9eef2; font-weight: 600; }
+</style>
+
+<div class="ws-flow" role="img" aria-label="Flowchart: the path an email takes through WayStation, from your phone to your provider and back, with nothing uploaded.">
+
+  <div class="ws-node">
+    <span class="ws-badge">1</span>
+    <div>
+      <h3>Your phone talks to your provider — directly</h3>
+      <p>WayStation connects straight from your phone to Outlook, Hotmail, MSN, and Microsoft 365. iCloud, Yahoo, AOL, and other IMAP accounts are coming soon. No WayStation mail server in the middle.</p>
+    </div>
+  </div>
+  <div class="ws-arrow" aria-hidden="true"></div>
+
+  <div class="ws-node">
+    <span class="ws-badge">2</span>
+    <div>
+      <h3>The message is scrubbed on arrival</h3>
+      <p>Scripts are stripped, remote images and tracking pixels are blocked, and links are disarmed before you ever see the message.</p>
+      <!-- (wording matches the live site's step 2 verbatim) -->
+    </div>
+  </div>
+  <div class="ws-arrow" aria-hidden="true"></div>
+
+  <div class="ws-node">
+    <span class="ws-badge">3</span>
+    <div>
+      <h3>It opens in a sealed viewer</h3>
+      <p>The email renders in a locked-down view: JavaScript stays off, nothing downloads on its own, and links can't fire by accident.</p>
+    </div>
+  </div>
+  <div class="ws-arrow" aria-hidden="true"></div>
+
+  <div class="ws-node">
+    <span class="ws-badge">4</span>
+    <div>
+      <h3>Pro runs its checks on your phone</h3>
+      <p>Sender authentication, look-alike domains, deceptive links, and risky attachment file types — quarantined by name. Attachment <em>contents</em> are never scanned or uploaded.</p>
+      <div class="ws-detail">
+        <h4>What the app actually pulls from each email</h4>
+        <ul>
+          <li><strong>The Authentication-Results header</strong> → SPF, DKIM, and DMARC pass or fail.</li>
+          <li><strong>The From name and address</strong> → mismatch check (says "PayPal," isn't PayPal).</li>
+          <li><strong>Every link</strong> → its real destination vs. its visible text.</li>
+          <li><strong>Each attachment</strong> → file name, extension, size, and type. Never the file contents.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ws-arrow" aria-hidden="true"></div>
+
+  <div class="ws-node">
+    <span class="ws-badge">5</span>
+    <div>
+      <h3>Close it and it's gone — or vaulted</h3>
+      <p>Unsaved mail is wiped from your phone when you close it. Mail you keep goes into an encrypted vault on your device.</p>
+    </div>
+  </div>
+
+</div>
+<p style="margin-top:20px">Ready to try it? <a href="/download.html">Download WayStation</a> &mdash; the <a href="/tutorials.html">tutorials</a> walk you through setup.</p>
+</div></main>
+<footer><div class="wrap"><div>&copy; 2026 WayStation Security. WayStation is not affiliated with Microsoft, Apple or Google.</div>
+<div><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/support.html">Support</a><a href="/changelog.html">Changelog</a><!-- TODO: paste your Stripe customer-portal link (Stripe dashboard > Settings > Customer portal) --><a href="https://billing.stripe.com/p/login/aFa4gB8Sibo29UNfnU6sw01">Manage subscription</a></div></div></footer>
+</body></html>
